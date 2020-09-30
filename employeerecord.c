@@ -17,8 +17,53 @@ void gotoxy(int x,int y)
 
 /** Main function started */
 
-int main()
+void main()
 {
+	FILE *fp;
+	int ch,id,k,i;
+	int size=sizeof(s);
+	int found=0;
+	char c,add,pas[50];
+	system("color 9f");
+	gotoxy(42,8);
+	printf("LOGIN(If 1st login press ENTER)");
+	gotoxy(42,10);
+	printf("____________________________________");
+	gotoxy(42,11);
+	printf("|\tEnter password :             |");
+	gotoxy(42,12);
+	printf("|__________________________________|");
+	//printf("\n\t\t\t\t\t");
+	gotoxy(65,11);
+	while( k<10)
+	{
+	    pas[k]=getch();
+	    char s=pas[k];
+	    if(s==13)
+		 break;
+	    else printf("*");
+	    k++;
+	}
+	pas[k]='\0';
+	tp=fopen("F:/Password.txt","r+");
+    fgets(pa.pass,25,tp);
+    if(strcmp(pas,pa.pass)==0)
+	{
+		system("cls");
+		gotoxy(10,3);
+		printf("<<<< Loading Please Wait >>>>");
+		for(i=0; i<5; i++)
+        {
+            printf("\t(*_*)");
+            Sleep(500);
+        }
+        printf(" \n\n\n\n\n\t\t\t\t\t     *  *  *  *  *  *  *  *");
+		printf("\n\n\t\t\t\t\t     *                    *");
+		printf("\n\n\t\t\t\t\t     *       Welcome      *");
+		printf("\n\n\t\t\t\t\t     *                    *");
+		printf("\n\n\t\t\t\t\t     *  *  *  *  *  *  *  *");
+		printf("\n\n\n\n\n\t\t\t\t\tPress any key to continue...... ");
+		getch();
     char another, choice;
     float percent;
     int found,i,j,k,pos,count,maxhrs,sum,max,t,K,P,nofempP,exist,flag,pointer=0,counter=0;
@@ -990,6 +1035,7 @@ int main()
         case 'm':
             exit(0); /// exit from the program
         }
+    }
     }
     return 0;
 }
